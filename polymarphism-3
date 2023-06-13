@@ -1,0 +1,28 @@
+//2. Run time polymarphism
+//1.methode overriding 
+
+#include <iostream>
+using namespace std;
+
+class animal {
+    public :
+    void speak(){
+        cout<<"speaking"<<endl;
+    }
+};
+
+class dog : public animal {
+    public:
+
+    void speak(){
+        cout<<"barcking "<<endl;
+    }
+};
+
+
+int main() {
+
+dog ob;
+ob.speak();
+
+}
