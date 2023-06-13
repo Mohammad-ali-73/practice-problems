@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+class parent {
+    public:
+    void func(){
+        cout<<"im your Father"<<endl;
+    }
+};
+
+class child1 : public parent {
+    public:
+
+    void func(){
+        cout<<"im first child:"<<endl;
+    }
+};
+
+class child2 : public parent {
+    public: 
+    void func(){
+        cout<<"im second child:"<<endl;
+    }
+};
+
+int main() {
+    parent object;
+    object.parent :: func();
+
+    cout<<endl;
+
+    child1 object2;
+    object2.parent :: func();
+    object2.child1:: func();
+
+cout<<endl;
+
+    child2 object3;
+    object3.parent :: func();
+   // object3.func2();
+    object3.child2 ::  func();
+
+    cout<<endl;
+
+}
