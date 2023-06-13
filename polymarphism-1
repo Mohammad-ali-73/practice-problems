@@ -1,0 +1,33 @@
+//compile time polymarphism
+// 1.comile time polymarphism 
+  //1. function overleading
+
+#include <iostream>
+using namespace std;
+
+
+class A{
+    public:
+    void sayhi(){
+        cout<<"hello brother :"<<endl;
+    }
+
+    int sayhi( string name ,int n ){
+        cout<<"hey there! : "<<endl;
+        return n;
+    }
+
+    void sayhi(){  //erroe genaret bcz the return type is same as first function and there is no arguments
+                   //if it has argument it will run ,it wont run either by changing the return type 
+        cout<<" aur bhadiya !"<<endl;
+    }
+};
+
+int main() {
+
+    A obj;
+    obj.sayhi();
+    obj.sayhi();
+    obj.sayhi();
+
+}
