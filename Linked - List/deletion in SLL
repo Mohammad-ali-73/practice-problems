@@ -1,0 +1,42 @@
+//deletion at any position
+void deletion(int pos,node* &head){
+    // at first
+    if(pos == 1){
+        node* temp = head;
+        head = head->next;
+        //memory free
+        temp->next = NULL;
+        delete temp;
+
+
+    }
+    else
+    { //middle or last
+    node* curr = head;
+    node* prev = NULL;
+    
+    int cnt = 1;
+    while(cnt <= pos){
+        prev = curr;
+        curr = curr->next;
+         cnt++;
+    }
+    prev -> next = curr -> next;
+    curr -> next = NULL;
+    delete curr;
+
+    }
+}
+
+
+//some changes while deleting LL 
+//distructor
+  ~node(){
+      int value = this->data;
+      if(this->next != NULL){
+       delete next;
+       this->next = NULL;   
+      }
+      cout<<"memory is free for node with data"<<endl;
+  }
+
