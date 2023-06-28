@@ -1,0 +1,20 @@
+int removeduplicate(node* &head){
+    if(head == NULL){
+        return NULL;
+    }
+
+    node* curr = head;
+    while(curr != NULL){
+        if(curr -> next != NULL && curr->data == curr->next->data){
+            node* temp = curr->next;
+            node* nodetodelete = curr->next;
+            delete(nodetodelete);
+            curr->next = temp->next;
+        }
+        else
+        {
+            curr = curr -> next;
+        }
+    }
+    return head;
+}
