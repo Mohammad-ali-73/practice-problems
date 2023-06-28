@@ -1,0 +1,28 @@
+//remove duplicates from unsorted Linked list
+
+int removeduplicateinunsorted(node* &head){
+
+    if(head == NULL || head -> next == NULL){
+        return NULL;
+    }
+
+    node* cur = head;
+
+    while(cur != NULL){
+        node* temp = cur;
+
+        while(temp != NULL){
+            if(cur->data == temp->next->data){
+                node* nodetodelete = temp->next->data;
+                delete(nodetodelete);
+                temp = nodetodelete -> next;
+            }
+            else
+            {
+                temp = temp->next;
+            }
+        }
+        cur = cur->next;
+    }
+    return head;
+}
