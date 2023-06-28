@@ -1,0 +1,17 @@
+// given Linked List is circular or not 
+
+bool iscirculer(node* &head){
+    if(head == NULL){
+        return NULL;
+    }
+
+    node* temp = head->next;
+    while(temp != NULL && temp != head){
+        temp = temp->next;
+    }
+    if(temp == head){
+        return true;
+    }
+    return false;
+
+}
