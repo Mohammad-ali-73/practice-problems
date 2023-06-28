@@ -1,0 +1,19 @@
+// detect and remove the loop in the linked List
+
+bool detectloop(node* &head){
+    if(head == NULL){
+        return false;
+    }
+
+    map<node* ,bool>visited;
+    node* temp = head;
+    while(temp != NULL){
+        if(visited(temp) == true){
+            return 1;
+        }
+
+        visited(temp) = true;
+        temp = temp->next;
+    }
+    return false;
+}
