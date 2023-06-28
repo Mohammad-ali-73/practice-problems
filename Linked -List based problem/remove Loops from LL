@@ -1,0 +1,15 @@
+//remove loop from the linked list
+
+void removeloop(node* head){
+    if(head == NULL)
+    {
+        return ;
+    }
+
+    node* start = getstarting(head); //this function will return the starting node of loop
+    node* temp = start;
+    while(temp->next != start){
+        temp = temp->next;
+    }
+    temp->next = NULL;
+}
