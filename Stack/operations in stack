@@ -1,0 +1,30 @@
+#include <iostream>
+#include<stack>
+using namespace std;
+int main() {
+
+//creation of stack
+stack<int> s;
+
+//inserting ele into stack
+s.push(1);
+s.push(2);
+s.push(3);
+s.push(4);
+s.push(5);
+
+//removing ele from stack
+s.pop();
+
+// viewing top ele
+s.top();
+cout<<  "top element is:"<<s.top()<<endl;
+
+//if stack is empty or not
+s.empty();
+cout<<s.empty()<<endl;
+
+//to know the size of stack
+cout<<s.size()<<endl;
+
+}
