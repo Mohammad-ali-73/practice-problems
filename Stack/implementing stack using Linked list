@@ -1,0 +1,76 @@
+#include <iostream>
+using namespace std;
+
+struct node
+{
+    int data;
+    node* next;
+};
+
+struct node* head = NULL;
+
+void push(int ele){
+    node* temp;
+    temp = new node();
+    temp->data = ele;
+    temp->next = head;
+    head = temp;
+}
+
+
+bool isempty(){
+    if(head == NULL){
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+void pop(){
+
+    node* temp;
+    if(isempty()){
+        cout<<"stack is empty"<<endl;
+    }
+    else{
+        temp = head;
+        head = head->next;
+        delete(temp);
+    }
+}
+/* 
+
+int top_element(){
+    if(head == NULL)
+        cout<<"stack is empty:"<<endl;
+    else
+        return head->data;   
+} */
+void print_stack(){
+    struct node* curr;
+    if(isempty()){
+        cout<<"stack is empty"<<endl;
+    }
+    else{
+        curr = head;
+        cout<<"elements are:";
+        while(curr!=NULL){
+            cout<<curr->data<<" ";
+            curr = curr->next;
+        }
+        cout<<endl;
+    }
+}
+
+int main() {
+
+    push(5);
+    push(10);
+    push(12);
+    push(13);
+    print_stack();
+
+    pop();
+    print_stack();
+}
