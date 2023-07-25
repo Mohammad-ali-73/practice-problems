@@ -1,0 +1,36 @@
+#include <iostream>
+#include<queue>
+using namespace std;
+int main() {
+    //creation of queue
+queue<int> q;
+
+cout<<"queeu is empty :"<<q.empty()<<endl;
+
+
+//insertion in queue
+q.push(10);
+q.push(20);
+q.push(30);
+q.push(40);
+q.push(50);
+q.push(60);
+
+//size of queue
+cout<<"size of queue:"<<q.size()<<endl;
+
+//front element in queue
+cout<<" front ele in queue is : "<<q.front()<<endl;
+
+//rear ele in queue--- such rear function class is not present in stl
+// cout<<"Rear ele in queue is :"<<q.rear()<<endl;
+
+//deletion in queue
+q.pop();
+
+cout<<"size after deletion:"<< q.size()<<endl;
+
+//chech queue is empty or not 
+cout<<"queeu is empty :"<<q.empty()<<endl;
+
+}
